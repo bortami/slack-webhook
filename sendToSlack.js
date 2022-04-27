@@ -5,6 +5,7 @@ exports.main = (event, callback) => {
   const dealName = event.inputFields['dealname'];
   const portalID = PORTAL_ID
   const dealID = event.inputFields['hs_object_id'];
+  const dealPipeline = event.inputFields['pipeline'];
 
   const headers = {
     'Content-Type': 'application/json'
@@ -27,6 +28,10 @@ exports.main = (event, callback) => {
             {
               "type": "mrkdwn",
               "text": `*Name:*\n ${dealName}`
+            },
+            {
+              "type": "mrkdwn",
+              "text": `*Pipleine:*\n ${dealPipeline}`
             }
           ]
         },
